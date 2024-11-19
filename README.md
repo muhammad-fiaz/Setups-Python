@@ -1,6 +1,6 @@
-<p align="center">
-  # Setups Python
-</p>
+<h1 align="center">
+ Setups Python
+</h1>
 <p align="center">
     <img src="https://img.shields.io/pypi/v/setups.svg" alt="PyPI Version">
 <img src="https://img.shields.io/github/license/muhammad-fiaz/setups-python.svg" alt="License Badge">
