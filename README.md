@@ -12,6 +12,13 @@
 <img src="https://img.shields.io/github/last-commit/muhammad-fiaz/setups-python" alt="Last Commit"> 
 <img src="https://img.shields.io/github/commit-activity/m/muhammad-fiaz/setups-python.svg" alt="Commit Activity">
     <img src="https://img.shields.io/github/license/muhammad-fiaz/setups-python.svg" alt="License Badge">
+ <a href="https://github.com/muhammad-fiaz/Setups-Python/actions/workflows/github-code-scanning/codeql">
+    <img src="https://github.com/muhammad-fiaz/Setups-Python/actions/workflows/github-code-scanning/codeql/badge.svg" alt="CodeQL Badge">
+</a>
+
+   <a href="https://github.com/sponsors/muhammad-fiaz">
+    <img src="https://img.shields.io/badge/sponsor-muhammad--fiaz-ff69b4" alt="Sponsor" />
+  </a>
 </p>
 
 **Setups Python** is a Python CLI tool to generate a `setup.py` file for your Python project dynamically. It prompts the user for key project details like dependencies, license types, and classifiers.
