@@ -34,7 +34,7 @@ pip install setups
 To create a `setup.py` file for your new project:
 
 ```bash
-setup new <project_name>
+setup <project_name>
 ```
 
 ## Example
