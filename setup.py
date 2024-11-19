@@ -18,7 +18,7 @@ setup(
     description=DESCRIPTION,  # Short description
     long_description=LONG_DESCRIPTION,  # Detailed description from README.md
     long_description_content_type="text/markdown",  # Format of the long description
-    url="https://github.com/muhammad-fiaz/setups",  # URL to the project's GitHub page
+    url="https://github.com/muhammad-fiaz/setups-python",  # URL to the project's GitHub page
     packages=find_packages(),  # Automatically find all packages in the directory
     classifiers=[  # List of classifiers to categorize your package
         "Development Status :: 3 - Alpha",
@@ -35,9 +35,9 @@ setup(
     tests_require=['pytest'],  # Dependencies for running tests
     license='MIT',  # License for the project
     project_urls={  # Additional URLs related to your project
-        'Source Code': 'https://github.com/muhammad-fiaz/setups',
-        'Bug Tracker': 'https://github.com/muhammad-fiaz/setups/issues',
-        'Documentation': 'https://github.com/muhammad-fiaz/setups#readme',
+        'Source Code': 'https://github.com/muhammad-fiaz/setups-python',
+        'Bug Tracker': 'https://github.com/muhammad-fiaz/setups-python/issues',
+        'Documentation': 'https://github.com/muhammad-fiaz/setups-python#readme',
     },
     entry_points={  # CLI Entry Point
         'console_scripts': [
