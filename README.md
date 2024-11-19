@@ -1,17 +1,29 @@
-# Setups Python
+<p align="center">
+  # Setups Python
+</p>
+<p align="center">
+    <img src="https://img.shields.io/pypi/v/setups.svg" alt="PyPI Version">
+<img src="https://img.shields.io/github/license/muhammad-fiaz/setups-python.svg" alt="License Badge">
+    <img src="https://img.shields.io/pypi/pyversions/setups.svg" alt="Python Version">
+    <img src="https://img.shields.io/pypi/dm/setups.svg" alt="Downloads">
+    <img src="https://img.shields.io/github/issues-pr/muhammad-fiaz/setups-python.svg" alt="PRs">
+    <img src="https://img.shields.io/github/issues/muhammad-fiaz/setups-python.svg" alt="Issues">
+    <img src="https://img.shields.io/github/contributors/muhammad-fiaz/setups-python.svg" alt="Contributors">
+<img src="https://img.shields.io/github/last-commit/muhammad-fiaz/setups-python" alt="Last Commit"> 
+<img src="https://img.shields.io/github/commit-activity/m/muhammad-fiaz/setups-python.svg" alt="Commit Activity">
+    <img src="https://img.shields.io/github/license/muhammad-fiaz/setups-python.svg" alt="License Badge">
+</p>
 
-**Setups Python** is a Python CLI tool to dynamically generate `setup.py` for Python projects. This tool allows you to configure important project details, such as dependencies, license types, classifiers, and more, through a simple command-line interface.
+**Setups Python** is a Python CLI tool to generate a `setup.py` file for your Python project dynamically. It prompts the user for key project details like dependencies, license types, and classifiers.
 
 ## Features
 
-- Automatically generate a `setup.py` file for your Python project.
-- Configure project version, description, license, dependencies, and more.
-- Choose from a wide range of open-source licenses.
-- Customize the setup process with URLs, classifiers, and other metadata.
+- Generate a `setup.py` with interactive prompts
+- Supports common open-source licenses
+- Define project metadata including dependencies, version, and URLs
+- Integrate with PyPI and other tools seamlessly
 
 ## Installation
-
-You can install `setups` from PyPI using pip:
 
 ```bash
 pip install setups
@@ -19,41 +31,36 @@ pip install setups
 
 ## Usage
 
-To generate a `setup.py` for your project, use the following command:
+To create a `setup.py` file for your new project:
 
 ```bash
 setup new <project_name>
 ```
-
-You'll be prompted for the following information:
-
-- Project version
-- Short and long descriptions
-- Author name and email
-- License type (MIT, GPL, etc.)
-- Minimum Python version required
-- List of dependencies and test dependencies
-- Project URL, bug tracker URL, and documentation URL
-- Classifiers for the project
 
 ## Example
 
 ```bash
 $ setup new my-awesome-project
 Version (e.g., 0.1.0): 0.1.0
-Short project description: A cool project
-Long description (use content from your README.md): This project is amazing.
-Author name: John Doe
-Author email: johndoe@example.com
-License type (MIT, GPL-3.0, etc.): MIT
-Minimum Python version required (e.g., 3.8): 3.8
-Comma-separated list of dependencies (leave empty for none): numpy, requests
-Comma-separated list of test dependencies (leave empty for none): pytest
-Project URL (e.g., GitHub URL): https://github.com/johndoe/my-awesome-project
-Bug tracker URL: https://github.com/johndoe/my-awesome-project/issues
-Documentation URL: https://github.com/johndoe/my-awesome-project/wiki
-Comma-separated list of classifiers: Development Status :: 5 - Production/Stable, Intended Audience :: Developers
+Short project description: An awesome project
+License type: MIT
+Minimum Python version required: 3.8
+Dependencies: numpy, requests
 ```
+
+## Contributing
+
+We welcome contributions! Fork the repository, create a feature branch, and submit a pull request. Please follow the steps below:
+
+1. Fork the repository
+2. Create a new branch: `git checkout -b feature-name`
+3. Commit your changes: `git commit -am 'Add feature'`
+4. Push to your fork: `git push origin feature-name`
+5. Submit a pull request
+
+## Code of Conduct
+
+By participating in this project, you agree to follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## License
 
