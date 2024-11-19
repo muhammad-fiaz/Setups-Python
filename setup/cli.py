@@ -7,10 +7,25 @@ VALID_LICENSES = [
     'CC0-1.0', 'MPL-2.0', 'EPL-2.0', 'AGPL-3.0', 'MIT-0', 'ISC', 'Unlicense'
 ]
 
+# Define available classifiers for easier reference
+CLASSIFIERS = {
+    "Development Status": [
+        "1 - Planning", "2 - Pre-Alpha", "3 - Alpha", "4 - Beta", "5 - Production/Stable"
+    ],
+    "Intended Audience": [
+        "Developers", "End Users/Desktop", "Education", "Science/Research", "System Administrators"
+    ],
+    "Programming Language": [
+        "Python :: 3", "Python :: 3.8", "Python :: 3.9", "Python :: 3.10", "Python :: 3.11"
+    ],
+    "License": [
+        "OSI Approved :: MIT License", "OSI Approved :: Apache Software License", "OSI Approved :: GPL License"
+    ],
+}
+
 @click.command()
 @click.argument("project_name")
 def generate_setup(project_name):
-
     """
     Generate a complete setup.py file for a new Python project, asking the user for all details dynamically.
     """
@@ -49,17 +64,27 @@ def generate_setup(project_name):
     documentation_url = click.prompt("Documentation URL", type=str)
 
     # Asking for classifiers (optional but recommended)
-    classifiers = click.prompt(
-        "Comma-separated list of classifiers (e.g., 'Development Status :: 5 - Production/Stable')",
-        default="", type=str)
-    classifiers = [cls.strip() for cls in classifiers.split(",") if cls.strip()]
+    click.echo("Select 'Development Status' (e.g., 1 - Planning, 5 - Production/Stable):")
+    development_status = click.prompt(
+        "Development Status", type=click.Choice(CLASSIFIERS["Development Status"]), default="1 - Planning"
+    )
+
+    click.echo("Select 'Intended Audience' (e.g., Developers, End Users/Desktop):")
+    audience = click.prompt(
+        "Intended Audience", type=click.Choice(CLASSIFIERS["Intended Audience"]), default="Developers"
+    )
+
+    click.echo("Select 'Programming Language' (e.g., Python 3.8, Python 3.9):")
+    language = click.prompt(
+        "Programming Language", type=click.Choice(CLASSIFIERS["Programming Language"]), default="Python :: 3.8"
+    )
 
     # Prepare the content for the setup.py file
     setup_content = f"""
 from setuptools import setup, find_packages
 
 VERSION = "{version}"  # Version of your package
-DESCRIPTION = '{description}'
+DESCRIPTION = '{description}'  # Short description
 
 # Long description of the project (can be pulled from README.md)
 LONG_DESCRIPTION = '''{long_description}'''
@@ -75,12 +100,12 @@ setup(
     url="{project_url}",  # URL to the project's GitHub page
     packages=find_packages(),  # Automatically find all packages in the directory
     classifiers=[  # List of classifiers to categorize your package
-        "Development Status :: 1 - Planning",
-        "Intended Audience :: Developers",
-        "Programming Language :: Python :: {python_version}",
+        "Development Status :: {development_status}",
+        "Intended Audience :: {audience}",
+        "Programming Language :: {language}",
         "License :: OSI Approved :: {license_type}",
         "Operating System :: OS Independent",
-    ] + [{', '.join([f'"{cls}"' for cls in classifiers])}],
+    ],
     python_requires=">={python_version}",  # Minimum Python version required
     install_requires={dependencies},  # List of dependencies
     setup_requires=["pytest-runner"],  # For running tests during installation
@@ -103,7 +128,6 @@ setup(
         f.write(setup_content)
 
     print(f"setup.py has been successfully generated for project '{project_name}'.")
-
 
 if __name__ == "__main__":
     generate_setup()
