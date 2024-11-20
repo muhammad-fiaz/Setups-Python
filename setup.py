@@ -1,5 +1,7 @@
 from setuptools import setup, find_packages
 
+from setups.help import usage_instructions
+
 VERSION = "0.0.2"  # Version of your package
 DESCRIPTION = 'Setups: Dynamically generate setup.py for Python projects.'
 
@@ -35,7 +37,9 @@ setup(
         'wheel',  # Add wheel to create binary distributions
     ],
     setup_requires=['pytest-runner'],  # For running tests during installation
-    tests_require=['pytest'],  # Dependencies for running tests
+    extras_require={  # Replacing 'tests_require' with 'extras_require'
+        'tests': ['pytest'],  # Optional testing dependencies
+    },
     license='MIT',  # License for the project
     project_urls={  # Additional URLs related to your project
         'Source Code': 'https://github.com/muhammad-fiaz/setups-python',
@@ -50,56 +54,15 @@ setup(
 )
 
 # Guide for the user after installation
-print("""
+print(r"""
 **************************************************
 Installation Complete!
-
-Once you've installed the package, you can now use the 'setup' command to generate setup.py for your Python project.
-
-Usage:
-    setup <project_name>
-
-This will ask you a series of questions to generate a setup.py file for your project. Once the setup.py is generated:
-
-🎉 Here's what you need to do next to upload your package to PyPI:
-
-Step 1: Create the Distribution
---------------------------------
-Run the following commands to build the distribution:
-
-    python setup.py sdist bdist_wheel
-
-This creates both source (.tar.gz) and wheel (.whl) distributions in the dist/ folder.
-
-Step 2: Upload to PyPI
------------------------
-Once you've built the distribution, upload it to PyPI with the following:
-
-    twine upload dist/*
-
-This will prompt you for your PyPI credentials and upload your package.
-
-You're all set to share your package with the world! 🚀
-
- -------------------
- | _______________ |
- | |XXXXXXXXXXXXX| |
- | |XXXXXXXXXXXXX| |
- | |XXXXXXXXXXXXX| |
- | |XXXXXXXXXXXXX| |
- | |XXXXXXXXXXXXX| |
- |_________________|
-     _[_______]_
- ___[___________]___
-|         [_____] []|__
-|         [_____] []|  \__
-L___________________J     \ \___\/
- ___________________      /\\
-/###################\\    (__)
 
 Thank you for using our tool. For more details on usage, please refer to the documentation:
 https://github.com/muhammad-fiaz/setups-python#usage
 
+""")
+usage_instructions()
+print(r"""
 **************************************************
 """)
-
