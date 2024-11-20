@@ -1,6 +1,8 @@
 from setuptools import setup, find_packages
 
-VERSION = "0.0.1"  # Version of your package
+from setups.help import usage_instructions
+
+VERSION = "0.0.2"  # Version of your package
 DESCRIPTION = 'Setups: Dynamically generate setup.py for Python projects.'
 
 # Reading the long description from README.md if exists
@@ -30,9 +32,14 @@ setup(
     python_requires='>=3.6',  # Minimum Python version required
     install_requires=[  # Dependencies needed to run the package
         'click',  # For creating command-line interfaces
+        'setuptools',  # For packaging the project
+        'twine',  # For uploading the package to PyPI
+        'wheel',  # Add wheel to create binary distributions
     ],
     setup_requires=['pytest-runner'],  # For running tests during installation
-    tests_require=['pytest'],  # Dependencies for running tests
+    extras_require={  # Replacing 'tests_require' with 'extras_require'
+        'tests': ['pytest'],  # Optional testing dependencies
+    },
     license='MIT',  # License for the project
     project_urls={  # Additional URLs related to your project
         'Source Code': 'https://github.com/muhammad-fiaz/setups-python',
@@ -45,3 +52,17 @@ setup(
         ],
     },
 )
+
+# Guide for the user after installation
+print(r"""
+**************************************************
+Installation Complete!
+
+Thank you for using our tool. For more details on usage, please refer to the documentation:
+https://github.com/muhammad-fiaz/setups-python#usage
+
+""")
+usage_instructions()
+print(r"""
+**************************************************
+""")
