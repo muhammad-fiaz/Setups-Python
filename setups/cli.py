@@ -102,9 +102,9 @@ setup(
     tests_require={test_dependencies},  # Specify dependencies needed for running tests
     license="{license_type}",  # License under which the project is released
     project_urls={{  # Additional URLs related to your project
-        "Source Code": "{project_url}" 
-        "Bug Tracker": "{bug_tracker_url}" 
-        "Documentation": "{documentation_url}"
+        "Source Code": "{project_url}" ,
+        "Bug Tracker": "{bug_tracker_url}", 
+        "Documentation": "{documentation_url}",
     }},
 )
 """
