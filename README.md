@@ -47,7 +47,7 @@ setup <project_name>
 ## Example
 
 ```bash
-$ setup new my-awesome-project
+$ setup my-awesome-project_name
 Version (e.g., 0.1.0): 0.1.0
 Short project description: An awesome project
 License type: MIT
